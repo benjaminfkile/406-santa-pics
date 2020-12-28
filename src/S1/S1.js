@@ -20,7 +20,7 @@ class S1 extends Component {
 
     componentDidMount() {
         this.s1Mounted = true
-        setInterval(this.setCenter, 150)
+        setInterval(this.setCenter, 500)
     }
 
     componentWillUnmount() {
