@@ -37,7 +37,6 @@ class S1 extends Component {
         } else {
             this.setState({ dropPin: true })
         }
-        console.log('sadfsf')
     }
 
     toggleNag = () => {

@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         {this.state.step > 1 && this.state.step !== 3 && <div className="Back_Btn">
