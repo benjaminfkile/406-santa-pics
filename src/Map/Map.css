@@ -1,0 +1,115 @@
+.Drop_Btn{
+    position: absolute;
+    display: flex;
+    top: 90vh;
+    left: 0vw;
+    width: 100vw;
+
+}
+
+.Drop{
+    display: flex;
+    width: 140px;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    border-color: rgb(8,115,138);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.Drop_Btn img{
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.Drop_Btn P{
+    margin-top: 11px;
+    font-size: 20px;
+}
+
+.Clear_Btn{
+    display: flex;
+    position: absolute;
+    top: 85vh;
+    width: 100vw;
+}
+
+#clear{
+    display: flex;
+    margin-left: auto;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    border-color: rgb(8,115,138);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#clear img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#clear p{
+    margin-top: 13px;
+}
+
+#next{
+    display: flex;
+    margin-right: auto;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    border-color: rgb(8,115,138);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#next img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 5px;
+    /* margin-right: 5px; */
+    -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+    -moz-transform: rotate(180deg);        /* FF */
+    -o-transform: rotate(180deg);          /* Opera */
+    -ms-transform: rotate(180deg);         /* IE9 */
+    transform: rotate(180deg); 
+}
+
+#next p{
+    margin-top: 13px;
+    margin-left: 15px;
+
+}
+
+.Target img{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+}

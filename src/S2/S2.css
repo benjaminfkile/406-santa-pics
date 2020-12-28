@@ -1,0 +1,110 @@
+input[type="file"] {
+    display: none;
+}
+
+.File_Upload {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    width: 180px;
+    height: 18px;
+    z-index: 1000;
+    text-align: center;
+    border: 1px solid rgb(8,115,138);
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(204,224,210);
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: pointer;
+}
+
+.File_Upload img{
+    width: 30px;
+    height: 30px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.Upload_Container{
+    position: absolute;
+    top: 0vh;
+    width: 100vw
+}
+
+
+#upload-img{
+    position: absolute;
+    top: 15vh;
+    width: 90vw;
+    height: 50vh;
+    left: 4.5vw;
+    border-style: solid;
+    border-color: rgb(8,115,138);
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+#progress{
+    margin-top: 67vh;
+    width: 100vw;
+    text-align: center;
+    color: rgb(204,224,210);
+    font-size: 20px;
+}
+
+#upload-btn{
+    display: flex;
+    margin-top: 65vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 123px;
+    height: 45px;
+    left: 40vw;
+    border-style: solid;
+    border-color: rgb(8,115,138);
+    border-width: 2px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-width: 1px;
+    color: rgb(204,224,210);
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    text-align: center; 
+}
+
+#upload-btn img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#upload-btn p{
+    margin-top: 15px;
+}
+
+#success{
+    margin-top: 67vh;
+    width: 100vw;
+    text-align: center;
+    color: rgb(204,224,210);
+    font-size: 20px;
+}
+
+@media (orientation: landscape) {
+    #upload-img{
+        width: 30vw;
+        left: 35vw;
+    }
+
+}

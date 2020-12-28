@@ -1,0 +1,39 @@
+body, html{
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(36,47,62);
+  font-family: 'Roboto', sans-serif;
+}
+
+.Back_Btn{
+  /* position: absolute; */
+  display: flex;
+  margin-top: 85vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 45px;
+  margin-bottom: 10px;
+  color: rgb(204,224,210);
+  background-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(8,115,138);
+  border-radius: 5px;
+  font-size: 20px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+
+.Back_Btn img{
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.Back_Btn p{
+  margin-top: 15px;
+
+}
