@@ -6,10 +6,10 @@
 .Drop_Btn{
     position: absolute;
     display: flex;
-    top: 85vh;
+    top: 80vh;
     left: 0vw;
     width: 100vw;
-
+    cursor: pointer;
 }
 
 .Drop{
@@ -43,8 +43,10 @@
 .Clear_Btn{
     display: flex;
     position: absolute;
-    top: 85vh;
+    top: 80vh;
     width: 100vw;
+    cursor: pointer;
+
 }
 
 #clear{
@@ -116,4 +118,14 @@
     bottom: 0;
     width: 80px;
     height: 80px;
+}
+
+@media (orientation: landscape) {
+.Drop_Btn{
+    top: 90vh;
+}
+.Clear_Btn{
+    top: 90vh;
+}
+
 }
