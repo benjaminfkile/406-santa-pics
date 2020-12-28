@@ -24,8 +24,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.step > 1 && this.state.step !== 3 && <div className="Back_Btn">
-          <img src="./res/back.png" alt="" onClick={this.back}></img>
+        {this.state.step > 1 && this.state.step !== 3 && <div className="Back_Btn" onClick={this.back}>
+          <img src="./res/back.png" alt=""></img>
           <p>Back</p>
         </div>}
         {this.state.step === 1 && <S1 callback={this.stepCallback} />}
