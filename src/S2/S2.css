@@ -52,7 +52,7 @@ input[type="file"] {
 }
 
 #progress{
-    margin-top: 63vh;
+    margin-top: 60vh;
     width: 100vw;
     text-align: center;
     color: rgb(204,224,210);
@@ -61,7 +61,7 @@ input[type="file"] {
 
 #upload-btn{
     display: flex;
-    margin-top: 60vh;
+    margin-top: 58vh;
     margin-left: auto;
     margin-right: auto;
     width: 123px;
