@@ -8,8 +8,7 @@
     bottom: 0;
     width: 100vw;
     border: none;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;    
 }
 
 .Drop{
@@ -25,6 +24,7 @@
     border-color: rgb(8,115,138);
     border-radius: 5px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .Drop_Btn img{
@@ -63,6 +63,7 @@
     border-color: rgb(8,115,138);
     border-radius: 5px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #clear img{
@@ -91,6 +92,7 @@
     border-color: rgb(8,115,138);
     border-radius: 5px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #next img{
