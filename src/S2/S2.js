@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import ApiStore from '../ApiStore'
 import axios from 'axios'
+import { v4 as uuidv4 } from 'uuid';
 import '../S2/S2.css'
 
 class S1 extends Component {
@@ -29,7 +31,7 @@ class S1 extends Component {
         const formData = new FormData()
         formData.append('image', this.state.selectedFile)
         const apiKey = "0bb30033f87b386364fc4b3ae4edfd99"
-        axios.post("https://api.imgbb.com/1/upload?key=" + apiKey + "&name=" + Math.random() + "&image=", formData, {
+        axios.post("https://api.imgbb.com/1/upload?key=" + apiKey + "&name=" + uuidv4() + "&image=", formData, {
 
             onUploadProgress: ProgressEvent => {
 
@@ -38,7 +40,7 @@ class S1 extends Component {
         })
             .then(res => {
                 this.setState({ response: res, finished: true, progress: null, update: true })
-                // this.storeUrl(this.state.response.data.data.display_url)
+                this.storeUrl(this.state.response.data.data.display_url)
                 this.next()
             });
     }
@@ -47,28 +49,31 @@ class S1 extends Component {
         this.props.callback(3)
     }
 
-    // storeUrl = (args) => {
-    //     if (this.state.response) {
-    //         fetch('http://localhost:8000/api/images', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({
-    //                 id: uuid.v4(),
-    //                 url: args
-    //             })
-    //         })
-    //     }
-    // }
+    storeUrl = (args) => {
+        if (this.state.response) {
+            fetch(ApiStore + '/api/santa', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    lat: window.pinLat,
+                    lng: window.pinLng,
+                    url: args,
+                    id: uuidv4(),
+                    active: '1'
+                })
+            })
+        }
+    }
 
     render() {
         return (
             <div className="Container">
                 <div className="Upload_Container">
                     <label className="File_Upload">
-                        <img src = "./res/choose-file.png" alt=""></img>
+                        <img src="./res/choose-file.png" alt=""></img>
                         <input id="choose-file" type="file" onChange={this.selectImg} />
                 Choose Image
                 </label>
@@ -80,7 +85,6 @@ class S1 extends Component {
                         <img src="./res/upload.png" alt=""></img>
                         <p>Upload</p>
                     </div>}
-
                 </div>
             </div>
 

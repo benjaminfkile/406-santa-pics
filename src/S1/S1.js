@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Map from '../Map/Map'
+import RouteStore from '../RouteStore'
 import "./S1.css"
 import "../Map/Map.css"
 
@@ -12,7 +13,7 @@ class S1 extends Component {
         this.state = {
             lat: 46.8721,
             lng: -113.9940,
-            zoom: 13,
+            zoom: 11,
             dropPin: false,
             nag: true
         }
@@ -20,15 +21,16 @@ class S1 extends Component {
 
     componentDidMount() {
         this.s1Mounted = true
-        setInterval(this.setCenter, 150)
+        this.centerInterval = setInterval(this.setCenter, 150)
     }
 
     componentWillUnmount() {
         this.s1Mounted = false
+        clearInterval(this.centerInterval)
     }
 
     setCenter = () => {
-        if(window.pinLat){
+        if (window.pinLat) {
             this.setState({ lat: window.pinLat, lng: window.pinLng, zoom: window.mapZoom })
         }
     }
@@ -54,6 +56,8 @@ class S1 extends Component {
     }
 
     render() {
+
+
         return (
             <div className="S1">
                 {this.state.nag && !this.props.nag && <div className="Nag">
@@ -83,7 +87,7 @@ class S1 extends Component {
                         }}
                         onMapLoad={map => {
 
-                            map.addListener("dragend", () => {
+                            map.addListener("drag", () => {
                                 if (this.s1Mounted) {
                                     window.pinLat = map.center.lat()
                                     window.pinLng = map.center.lng()
@@ -97,6 +101,16 @@ class S1 extends Component {
                                     map: map,
                                     label: '',
                                 });
+
+                            const flightPlanCoordinates = RouteStore
+                            const flightPath = new window.google.maps.Polyline({
+                                path: flightPlanCoordinates,
+                                geodesic: true,
+                                strokeColor: "#00ff2e",
+                                strokeOpacity: 1.0,
+                                strokeWeight: 2,
+                            });
+                            flightPath.setMap(map);
                         }}
                     />}
                     {!this.state.dropPin && <Map
@@ -108,7 +122,8 @@ class S1 extends Component {
                             zoomControl: false,
                             streetViewControl: false,
                             mapTypeControl: false,
-                            mapTypeId: 'hybrid'
+                            mapTypeId: 'hybrid',
+                            gestureHandling: 'greedy'
                         }}
                         onMapLoad={map => {
 
@@ -117,6 +132,16 @@ class S1 extends Component {
                                 window.pinLng = map.center.lng()
                                 window.mapZoom = map.getZoom()
                             });
+
+                            const flightPlanCoordinates = RouteStore
+                            const flightPath = new window.google.maps.Polyline({
+                                path: flightPlanCoordinates,
+                                geodesic: true,
+                                strokeColor: "#00ff2e",
+                                strokeOpacity: 1.0,
+                                strokeWeight: 2,
+                            });
+                            flightPath.setMap(map);
                         }}
                     />}
                 </div>

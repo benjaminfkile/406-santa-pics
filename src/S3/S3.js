@@ -15,7 +15,6 @@ class S3 extends Component {
 
     componentDidMount() {
         this.endshowMounted = true;
-        this.updateInterval = setInterval(this.update, 1000)
         setInterval(this.switchSponsor, 8000)
     }
 
@@ -32,7 +31,7 @@ class S3 extends Component {
         this.setState({ sponsor: this.sponsorDex })
     }
 
-    openPage = (args) => {
+    openSponsorSite = (args) => {
         if(args){
             window.open(SponsorStore[args].url, '_blank')
         }
@@ -40,16 +39,17 @@ class S3 extends Component {
 
     render() {
         return (
-            <div className="End_Show">
+            <div className="S3">
                 <h1>Thank You!</h1>
                 <h2>We will use this information to help find the best viewing locations for the 2021 flight.</h2>
                 <h3>Thank you to all our sponsors and donors.</h3>
-                <div className="Sponsor_Endshow">
-                    <img src={SponsorStore[this.state.sponsor].img} alt={SponsorStore[this.state.sponsor].name} onClick={() => this.openPage(this.state.sponsor)}></img>
+                <div className="Sonsors">
+                    <img src={SponsorStore[this.state.sponsor].img} alt={SponsorStore[this.state.sponsor].name} onClick={() => this.openSponsorSite(this.state.sponsor)}></img>
                 </div>
                 <div className="Contact">
                 <a href="https://www.facebook.com/groups/374773957140495/" target="_blank" rel="noopener noreferrer"><img id="fb" src="./res/fb.png" alt="Facebook"/> &nbsp;</a>
                 <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=santaflyover@gmail.com" target="_blank" rel="noopener noreferrer"><img id="mail" src="./res/mail.png" alt="email"/> &nbsp;</a>
+                <h2>Western Montana Santa Fly Over</h2>
                 </div>
             </div>
         )
