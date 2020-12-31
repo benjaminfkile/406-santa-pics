@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './App.css';
-import PinStore from './PinStore'
 import S1 from './S1/S1'
 import S2 from './S2/S2'
 import S3 from './S3/S3'
@@ -46,6 +45,7 @@ class App extends Component {
       </div>
     )
   }
+  //wtf!!!!
 }
 
 export default App;
