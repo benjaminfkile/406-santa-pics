@@ -23,7 +23,7 @@ class S1 extends Component {
     componentDidMount() {
         this.s1Mounted = true
         this.markers.push(RouteStore)
-        this.centerInterval = setInterval(this.setCenter, 100)
+        this.centerInterval = setInterval(this.setCenter, 10)
         this.dbInterval = setInterval(this.listen4db, 100)
     }
 
