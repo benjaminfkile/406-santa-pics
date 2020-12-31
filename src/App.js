@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
+import PinStore from './PinStore'
 import S1 from './S1/S1'
 import S2 from './S2/S2'
 import S3 from './S3/S3'
@@ -10,7 +11,18 @@ class App extends Component {
     super(props)
     this.state = {
       step: 1,
+      pins: null
     }
+  }
+
+  componentDidMount(){
+    this.dbInteveral = setInterval(this.listenForDB, 100);
+  }
+
+  
+
+  listenForDB = () =>{
+    // console.log(PinStore)
   }
 
   stepCallback = (args) => {
