@@ -23,7 +23,7 @@ class S1 extends Component {
     componentDidMount() {
         this.s1Mounted = true
         this.markers.push(RouteStore)
-        this.centerInterval = setInterval(this.setCenter, 10)
+        this.centerInterval = setInterval(this.setCenter, 100)
         this.dbInterval = setInterval(this.listen4db, 100)
     }
 
@@ -66,7 +66,7 @@ class S1 extends Component {
                         Move the map over where you took the picture
                     </h1>
                     <h2>
-                        When the crosshairs are over the location click the Drop Pin button at the bottom of the screen
+                        When the green pin is over the location click the NEXT button at the bottom of the screen.
                     </h2>
                     <div className="Toggle_Nag" onClick={this.toggleNag}>
                         <img src="./res/ok.png" alt="" ></img>
