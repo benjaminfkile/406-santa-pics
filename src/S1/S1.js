@@ -156,5 +156,3 @@ class S1 extends Component {
 }
 
 export default S1
-
-//build please

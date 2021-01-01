@@ -10,18 +10,7 @@ class App extends Component {
     super(props)
     this.state = {
       step: 1,
-      pins: null
     }
-  }
-
-  componentDidMount(){
-    this.dbInteveral = setInterval(this.listenForDB, 100);
-  }
-
-  
-
-  listenForDB = () =>{
-    // console.log(PinStore)
   }
 
   stepCallback = (args) => {
@@ -45,7 +34,6 @@ class App extends Component {
       </div>
     )
   }
-  //wtf!!!!
 }
 
 export default App;
